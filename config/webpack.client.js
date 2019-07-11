@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
       pathinfo: false,
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.pcss']
+      extensions: ['.tsx', '.ts', '.js', '.jsx', '.css', '.pcss', '.styl']
     },
     optimization: {
       // build speed optimization, try this options if needed
@@ -94,7 +94,18 @@ module.exports = (env, argv) => {
             'postcss-loader',
           ],
         },
-        { test: /\.(png|svg|jpg)$/,
+        { test: /\.svg$/,
+          use: [
+            'svg-sprite-loader',
+            { loader: 'svgo-loader',
+              options: {
+                pretty: true,
+                externalConfig: 'svgo.config.yml',
+              }
+            }
+          ]
+        },
+        { test: /\.(png|jpg)$/,
           use: [
             { loader: 'file-loader',
               options: {

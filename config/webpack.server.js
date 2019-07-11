@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: ['babel-loader'],
         },
-        { test: /\.svg$|\.png$/,
+        { test: /\.svg$|\.png$|\.styl$/,
           use: ['ignore-loader'],
         },
         { test: /\.p?css$/,
