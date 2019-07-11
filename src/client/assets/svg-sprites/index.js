@@ -1,0 +1,6 @@
+import './svg-arrow-down.svg'
+import './svg-arrow-left.svg'
+import './svg-arrow-right.svg'
+import './svg-arrow-up.svg'
+import './svg-cross.svg'
+import './svg-dude.svg'

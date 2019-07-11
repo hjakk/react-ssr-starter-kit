@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import About from './pages/about/About'
+import About from './pages/buttons/Buttons'
 import Main from './pages/main/Main'
 
 

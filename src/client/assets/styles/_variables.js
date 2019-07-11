@@ -1,3 +1,3 @@
 module.exports = {
-  fontSize: 16
+  fontSize: 16,
 }

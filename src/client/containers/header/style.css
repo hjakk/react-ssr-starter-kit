@@ -12,6 +12,6 @@
 
   &-menu {
     color: white;
-    font-size: $(fontSize)px;
+    /* font-size: $fontSize; */
   }
 }

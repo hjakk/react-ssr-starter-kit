@@ -1,7 +1,6 @@
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import compression from 'compression'
-// import path from 'path'
 import middleware from './middleware'
 
 
@@ -12,7 +11,6 @@ app.disable('x-powered-by')
 app.use(cookieParser())
 app.use(compression())
 
-// app.use(express.static(path.resolve(__dirname, '..', 'client')))
 app.use('^/$', middleware)
 app.use(express.static(DIR))
 app.use('*', middleware)

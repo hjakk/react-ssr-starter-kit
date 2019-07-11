@@ -1,8 +1,9 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import 'normalize.css'
-import './assets/styles/layout.pcss'
+import './assets/styles/layout.css'
 import './types/declarations'
+import './assets/svg-sprites'
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
