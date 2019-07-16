@@ -4,6 +4,7 @@
     "stylelint-config-css-modules"
   ],
   "rules": {
-    "comment-empty-line-before": "never"
+    "comment-empty-line-before": "never",
+    "at-rule-no-unknown": null
   }
 }

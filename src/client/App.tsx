@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Header from './containers/header/Header'
+import Footer from './containers/footer'
 import Routes from './Routes'
 
 
@@ -8,6 +9,7 @@ function App(): JSX.Element {
     <>
       <Header />
       <Routes />
+      <Footer />
     </>
   )
 }

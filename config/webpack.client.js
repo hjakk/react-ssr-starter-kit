@@ -94,6 +94,26 @@ module.exports = (env, argv) => {
             'postcss-loader',
           ],
         },
+        { test: /\.styl$/,
+          use: [
+            { loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '/',
+                hmr: isDev
+              }
+            },
+            { loader: 'css-loader',
+              options: {
+                localsConvention: 'camelCase',
+                modules: {
+                  localIdentName: isDev? '[local]-[hash:base64:5]' : '[hash:base64:5]',
+                },
+              }
+            },
+            'postcss-loader',
+            'stylus-loader',
+          ],
+        },
         { test: /\.svg$/,
           use: [
             'svg-sprite-loader',
@@ -110,7 +130,7 @@ module.exports = (env, argv) => {
             { loader: 'file-loader',
               options: {
                 name: `[name].[ext]?[hash]`,
-                outputPath: 'assets/images'
+                outputPath: 'assets/images',
               }
             }
           ],

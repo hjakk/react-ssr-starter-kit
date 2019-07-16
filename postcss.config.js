@@ -18,6 +18,7 @@ module.exports = {
       "variables": require('./src/client/assets/styles/_variables')
     },
     "postcss-color-function": true,
+    // "postcss-calc": true,
     // "precss": true,
   }
 }

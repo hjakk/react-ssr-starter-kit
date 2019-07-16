@@ -3,7 +3,7 @@ declare module '*.css' {
   export default css
 }
 
-declare module '*.pcss' {
+declare module '*.styl' {
   const css: { [key: string]: string }
   export default css
 }
