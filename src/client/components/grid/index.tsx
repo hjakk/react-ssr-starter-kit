@@ -1,8 +1,16 @@
 import * as React from 'react'
-import { Grid } from 'react-ui'
+import { Grid, Col } from 'react-ui'
 import style from './style.styl'
 
 
-export default function _Button(props: React.ComponentProps<typeof Grid>): JSX.Element {
+function _Grid(props: React.ComponentProps<typeof Grid>): JSX.Element {
   return <Grid classList={ style } { ...props } />
 }
+
+function _Col(props: React.ComponentProps<typeof Col>): JSX.Element {
+  return <Col classList={ style } { ...props } />
+}
+
+_Grid.Col = _Col
+
+export default _Grid

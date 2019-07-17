@@ -13,7 +13,7 @@ const MENU = [
 
 function Header(): JSX.Element {
   return (
-    <Grid className={ style.header } item auto>
+    <Grid className={ style.header }>
       <Grid className={ css.center }>
         Header
 

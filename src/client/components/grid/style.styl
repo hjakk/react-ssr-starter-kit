@@ -1,34 +1,47 @@
-.item
-  position: relative
-  // flex: 1 1 0
-  flex-grow: 1
-  flex-basis: 0
-  // padding-left: 10px
-  // padding-right: 10px
-  width: 100%
-  min-height: 1px
-  max-width: 100%
+// .col
+//   position: relative
+//   // flex: 0 1 auto
 
-  &.auto
-    flex: 0 1 auto
-    width: auto
-  
-  for size in (320 480 640 800 960 1120 1280)
-    for n in (1..16)
-      &.w{ size }-{ n }
-        @media (min-width: unit(size, 'px'))
-          flex: 0 0 unit(n/16*100, '%')
-          max-width: unit(n/16*100, '%')
-          // flex-basis: unit(n/16*100, '%')
-      &.w{ size }-hide
-        @media (max-width: size)
-          display: none
+//   flex: 1 0 0
+
+//   // padding-left: 10px
+//   // padding-right: 10px
+//   width: 100%
+//   min-height: 1px
+//   max-width: 100%
+
+//   // &-fit
+//   //   flex-basis: : 
+.col
+  position: relative
+  flex: 1 1 0
+  width: 100%
+  max-width: 100%
+  min-height: 1px
+
+cols = 14
+
+for size in (320 480 640 800 960 1120 1200)
+  for n in (1..cols)
+    .w{ size }-{ n }
+      position: relative
+      width: 100%
+      min-height: 1px
+
+      @media (min-width: unit(size + 1, 'px'))
+        flex: 0 0 unit(n/cols*100, '%')
+        max-width: unit(n/cols*100, '%')
+
+for size in (320 480 640 800 960 1120 1200)
+  .hide-{ size }
+    @media (max-width: unit(size, 'px'))
+      display: none !important
 
 
 .grid
   display: flex
+  flex: 0 1 auto
   flex-wrap: wrap
-  // flex: 0 1 auto
 
   &.center
     justify-content: center
@@ -40,10 +53,10 @@
     flex-direction: column
     flex-wrap: nowrap
 
-for n in (1..3)
-  .row{ n }
-    & > .item
-      padding-bottom: unit((n*10), 'px')
+// for n in (1..3)
+//   .row{ n }
+//     & > .item
+//       padding-bottom: unit((n*10), 'px')
 
 .padded
   &.grid

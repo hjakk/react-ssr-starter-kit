@@ -29,7 +29,7 @@ const _routes: IRoutesObject[] = [
 
 function Routes({ routes = _routes }: IRoutesProps): JSX.Element {
   return (
-    <Grid item>
+    <Grid>
       <Switch>
         { routes.map((route, i): JSX.Element => (
           <Route
