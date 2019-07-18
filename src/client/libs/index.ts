@@ -1,4 +1,4 @@
-import css from '../assets/styles/layout.css'
+import css from '../assets/styles/layout.styl'
 
 export {
   css

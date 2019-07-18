@@ -1,7 +1,7 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import 'normalize.css'
-import './assets/styles/global.css'
+import './assets/styles/global'
 import './types/declarations'
 import './assets/svg-sprites'
 

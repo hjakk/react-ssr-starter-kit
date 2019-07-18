@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Grid } from '../../components'
-import style from './style.css'
+import style from './style.styl'
 
 
 function Footer(): JSX.Element {

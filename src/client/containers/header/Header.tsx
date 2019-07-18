@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { Grid } from '../../components'
 import { css } from '../../libs'
-import style from './style.css'
+import style from './style.styl'
 
 
 const MENU = [

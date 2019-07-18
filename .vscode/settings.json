@@ -2,7 +2,6 @@
   "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
   "editor.autoIndent": false,
-  "editor.find.addExtraSpaceOnTop": false,
   "editor.fontLigatures": true,
   "editor.acceptSuggestionOnEnter": "off",
   "emmet.includeLanguages": {
