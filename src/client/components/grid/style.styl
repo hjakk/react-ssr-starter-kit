@@ -12,33 +12,28 @@
 
 //   // &-fit
 //   //   flex-basis: : 
-.col
+_cols = 14
+
+.col, .col-auto
   position: relative
-  flex: 1 1 0
-  width: 100%
   max-width: 100%
   min-height: 1px
 
-cols = 14
+.col
+  flex: 1 1 0
+  width: 100%
 
-for size in (320 480 640 800 960 1120 1200)
-  for n in (1..cols)
-    .w{ size }-{ n }
-      position: relative
-      width: 100%
-      min-height: 1px
+.col-auto
+  flex: 0 1 auto
 
-      @media (min-width: unit(size + 1, 'px'))
-        flex: 0 0 unit(n/cols*100, '%')
-        max-width: unit(n/cols*100, '%')
+.col-flex
+  display: inline-flex
 
-for size in (320 480 640 800 960 1120 1200)
-  .hide-{ size }
-    @media (max-width: unit(size, 'px'))
-      display: none !important
+  &.ai-center
+    align-items: center
 
 
-.grid
+.grid, .grid-padded
   display: flex
   flex: 0 1 auto
   flex-wrap: wrap
@@ -58,11 +53,38 @@ for size in (320 480 640 800 960 1120 1200)
 //     & > .item
 //       padding-bottom: unit((n*10), 'px')
 
-.padded
-  &.grid
-    margin-left: -12px
-    margin-right: -12px
+.grid-padded
+  margin-left: -12px
+  margin-right: -12px
 
-  & > .item
+  & > .col, & > .col-auto
     padding-left: 12px
     padding-right: 12px
+    margin-bottom: em(12)
+
+
+for n in (1.._cols)
+  .col-{ n }
+    flex: 0 0 unit(n/_cols*100, '%')
+    max-width: unit(n/_cols*100, '%')
+
+for size in (320 480 640 800 960 1120 1200)
+  for n in (1.._cols)
+    .w{ size }-{ n }
+      position: relative
+      width: 100%
+      min-height: 1px
+
+      .grid-padded &
+        padding-left: 12px
+        padding-right: 12px
+        margin-bottom: em(12)
+
+      @media (min-width: unit(size + 1, 'px'))
+        flex: 0 0 unit(n/_cols*100, '%')
+        max-width: unit(n/_cols*100, '%')
+
+for size in (320 480 640 800 960 1120 1200)
+  .hide-{ size }
+    @media (max-width: unit(size, 'px'))
+      display: none !important

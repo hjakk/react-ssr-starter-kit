@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { Grid } from './components'
 import Buttons from './pages/buttons/Buttons'
 import GridPage from './pages/grid'
+import DropdownsPage from './pages/dropdowns'
 import Main from './pages/main/Main'
 
 
@@ -25,11 +26,12 @@ const _routes: IRoutesObject[] = [
   },
   { path: '/buttons', component: Buttons },
   { path: '/grid', component: GridPage },
+  { path: '/dropdowns', component: DropdownsPage },
 ]
 
 function Routes({ routes = _routes }: IRoutesProps): JSX.Element {
   return (
-    <Grid>
+    <Grid.Col>
       <Switch>
         { routes.map((route, i): JSX.Element => (
           <Route
@@ -47,7 +49,7 @@ function Routes({ routes = _routes }: IRoutesProps): JSX.Element {
         ))
         }
       </Switch>
-    </Grid>
+    </Grid.Col>
   )
 }
 

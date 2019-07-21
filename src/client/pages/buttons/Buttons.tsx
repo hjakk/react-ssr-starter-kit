@@ -12,16 +12,16 @@ function Buttons(): JSX.Element {
         <b>Button sizes</b>:
       </p>
 
-      <Grid>
-        <Grid>
+      <Grid padded>
+        <Grid.Col auto>
           <Button>Button 1</Button>
-        </Grid>
-        <Grid>
+        </Grid.Col>
+        <Grid.Col auto>
           <Button size="1">Button 2</Button>
-        </Grid>
-        <Grid>
+        </Grid.Col>
+        <Grid.Col auto>
           <Button size="2">Button 3</Button>
-        </Grid>
+        </Grid.Col>
       </Grid>
 
       <p>

@@ -9,11 +9,12 @@ const MENU = [
   { text: 'Main', path: '/' },
   { text: 'Buttons', path: '/buttons' },
   { text: 'Grid', path: '/grid' },
+  { text: 'Dropdowns', path: '/dropdowns' },
 ]
 
 function Header(): JSX.Element {
   return (
-    <Grid className={ style.header }>
+    <Grid.Col className={ style.header } auto>
       <Grid className={ css.center }>
         Header
 
@@ -26,7 +27,7 @@ function Header(): JSX.Element {
           }
         </ul>
       </Grid>
-    </Grid>
+    </Grid.Col>
   )
 }
 

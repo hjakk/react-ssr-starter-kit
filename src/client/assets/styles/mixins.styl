@@ -1,0 +1,32 @@
+max(width)
+  @media (max-width: unit((width / default-font-size), 'em'))
+    {block}
+
+min(width)
+  @media (min-width: unit((width / default-font-size), 'em'))
+    {block} 
+
+em(values, context = default-font-size, u = 'em')
+  str = ''
+  for v in values
+    str += ' ' + (v == 0? v : unit(v/context, u))
+  s(str)
+
+rem(values, context = default-font-size, u = 'rem')
+  str = ''
+  for v in values
+    str += ' ' + (v == 0? v : unit(v/context, u))
+  s(str)
+
+
+placeholder()
+  &::-moz-placeholder
+    { block }
+  &::-webkit-input-placeholder
+    { block }
+  &:-ms-input-placeholder
+    { block }
+  &::-ms-input-placeholder
+    { block }
+  &::placeholder
+    { block }

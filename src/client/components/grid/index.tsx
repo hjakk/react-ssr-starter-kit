@@ -4,11 +4,11 @@ import style from './style.styl'
 
 
 function _Grid(props: React.ComponentProps<typeof Grid>): JSX.Element {
-  return <Grid classList={ style } { ...props } />
+  return <Grid classes={ style } { ...props } />
 }
 
 function _Col(props: React.ComponentProps<typeof Col>): JSX.Element {
-  return <Col classList={ style } { ...props } />
+  return <Col classes={ style } { ...props } />
 }
 
 _Grid.Col = _Col

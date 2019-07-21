@@ -4,7 +4,7 @@ import style from './style.styl'
 
 
 function _Button(props: React.ComponentProps<typeof Button>): JSX.Element {
-  return <Button classList={ style } color="grey" { ...props } />
+  return <Button classes={ style } color="grey" { ...props } />
 }
 
 export default _Button

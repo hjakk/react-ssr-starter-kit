@@ -5,9 +5,9 @@ import style from './style.styl'
 
 function Footer(): JSX.Element {
   return (
-    <Grid className={ style.footer }>
+    <Grid.Col className={ style.footer } auto>
       footer
-    </Grid>
+    </Grid.Col>
   )
 }
 
