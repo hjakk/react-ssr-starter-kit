@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { List, ListItem } from 'react-ui'
+import { List, ListItem } from '@project/ui'
 import style from './style.styl'
 
 

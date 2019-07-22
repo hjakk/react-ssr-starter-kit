@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Input } from 'react-ui'
+import { Input } from '@project/ui'
 import style from './style.styl'
 
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Select, Grid, Input, Button, List } from '../../components'
+import { Select, Grid, Input, Button, List, Checkbox } from '../../components'
 import { css } from '../../libs'
 
 
@@ -12,6 +12,12 @@ function DropdownsPage(): JSX.Element {
   return (
     <div className={ css.center }>
       <h1>Dropdowns</h1>
+
+      <Grid padded>
+        <Grid.Col>
+          <Checkbox>checkbox 1</Checkbox>
+        </Grid.Col>
+      </Grid>
 
       <Grid padded>
         <Grid.Col auto>

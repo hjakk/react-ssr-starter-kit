@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Grid, Col } from 'react-ui'
+import { Grid, Col } from '@project/ui'
 import style from './style.styl'
 
 

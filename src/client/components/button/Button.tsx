@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button } from 'react-ui'
+import { Button } from '@project/ui'
 import style from './style.styl'
 
 
