@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { Select, Grid, Input, Button, List, Checkbox } from '../../components'
+import { Container, Dimmer, configDimmer } from '@project/ui'
 import { css } from '../../libs'
 
-
+console.log( configDimmer )
 function DropdownsPage(): JSX.Element {
   const [state, setState] = React.useState({
     value1: null,
@@ -11,7 +12,11 @@ function DropdownsPage(): JSX.Element {
 
   return (
     <div className={ css.center }>
-      <h1>Dropdowns</h1>
+      <Container>
+        <h1>Dropdowns</h1>
+      </Container>
+
+      <Dimmer />
 
       <Grid padded>
         <Grid.Col>

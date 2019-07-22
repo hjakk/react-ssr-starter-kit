@@ -1,3 +1,5 @@
+import './container'
+
 export { default as Button } from './button/Button'
 export { default as Checkbox } from './checkbox'
 export { default as Grid } from './grid'
