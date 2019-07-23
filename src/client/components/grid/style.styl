@@ -1,90 +1,72 @@
-// .col
+// _cols = 14
+
+// .col, .col-auto
 //   position: relative
-//   // flex: 0 1 auto
-
-//   flex: 1 0 0
-
-//   // padding-left: 10px
-//   // padding-right: 10px
-//   width: 100%
-//   min-height: 1px
 //   max-width: 100%
+//   min-height: 1px
 
-//   // &-fit
-//   //   flex-basis: : 
-_cols = 14
+// .col
+//   flex: 1 1 0
+//   width: 100%
 
-.col, .col-auto
-  position: relative
-  max-width: 100%
-  min-height: 1px
+// .col-auto
+//   flex: 0 1 auto
 
-.col
-  flex: 1 1 0
-  width: 100%
+// .col-flex
+//   display: inline-flex
 
-.col-auto
-  flex: 0 1 auto
-
-.col-flex
-  display: inline-flex
-
-  &.ai-center
-    align-items: center
+//   &.ai-center
+//     align-items: center
 
 
-.grid, .grid-padded
-  display: flex
-  flex: 0 1 auto
-  flex-wrap: wrap
+// .grid, .grid-padded
+//   display: flex
+//   flex: 0 1 auto
+//   flex-wrap: wrap
 
-  &.center
-    justify-content: center
+//   &.center
+//     justify-content: center
 
-  &.space-between
-    justify-content: space-between
+//   &.space-between
+//     justify-content: space-between
 
-  &.column
-    flex-direction: column
-    flex-wrap: nowrap
-
-// for n in (1..3)
-//   .row{ n }
-//     & > .item
-//       padding-bottom: unit((n*10), 'px')
-
-.grid-padded
-  margin-left: -12px
-  margin-right: -12px
-
-  & > .col, & > .col-auto
-    padding-left: 12px
-    padding-right: 12px
-    margin-bottom: em(12)
+//   &.column
+//     flex-direction: column
+//     flex-wrap: nowrap
 
 
-for n in (1.._cols)
-  .col-{ n }
-    flex: 0 0 unit(n/_cols*100, '%')
-    max-width: unit(n/_cols*100, '%')
+// .grid-padded
+//   margin-left: -12px
+//   margin-right: -12px
 
-for size in (320 480 640 800 960 1120 1200)
-  for n in (1.._cols)
-    .w{ size }-{ n }
-      position: relative
-      width: 100%
-      min-height: 1px
+//   & > .col, & > .col-auto
+//     padding-left: 12px
+//     padding-right: 12px
+//     margin-bottom: em(12)
 
-      .grid-padded &
-        padding-left: 12px
-        padding-right: 12px
-        margin-bottom: em(12)
 
-      @media (min-width: unit(size + 1, 'px'))
-        flex: 0 0 unit(n/_cols*100, '%')
-        max-width: unit(n/_cols*100, '%')
+// for n in (1.._cols)
+//   .col-{ n }
+//     flex: 0 0 unit(n/_cols*100, '%')
+//     max-width: unit(n/_cols*100, '%')
 
-for size in (320 480 640 800 960 1120 1200)
-  .hide-{ size }
-    @media (max-width: unit(size, 'px'))
-      display: none !important
+// for size in (320 480 640 800 960 1120 1200)
+//   for n in (1.._cols)
+//     .w{ size }-{ n }
+//       position: relative
+//       width: 100%
+//       min-height: 1px
+
+//       .grid-padded &
+//         padding-left: 12px
+//         padding-right: 12px
+//         margin-bottom: em(12)
+
+//       @media (min-width: unit(size + 1, 'px'))
+//         flex: 0 0 unit(n/_cols*100, '%')
+//         max-width: unit(n/_cols*100, '%')
+
+// for size in (320 480 640 800 960 1120 1200)
+//   .hide-{ size }
+//     @media (max-width: unit(size, 'px'))
+//       display: none !important

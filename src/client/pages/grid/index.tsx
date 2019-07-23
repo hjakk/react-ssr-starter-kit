@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Grid } from '../../components'
+import { Grid, Col } from '@project/ui'
 import { css } from '../../libs'
 import style from './style.styl'
 
@@ -14,34 +14,34 @@ function GridPage(): JSX.Element {
       </p>
 
       <Grid hide="640">
-        <Grid.Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col>
+        </Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col>
+        </Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col>
+        </Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
+        </Col>
       </Grid>
-      
+
       <p>
         <b>Padded, row 1</b>:
       </p>
 
       <Grid jc="center">
-        <Grid.Col w800="4">
+        <Col w800="4">
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col w800="4">
+        </Col>
+        <Col w800="4">
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col w800="4">
+        </Col>
+        <Col w800="4">
           <div className={ style.block } />
-        </Grid.Col>
+        </Col>
       </Grid>
 
       <p>
@@ -49,15 +49,15 @@ function GridPage(): JSX.Element {
       </p>
 
       <Grid jc="space-between">
-        <Grid.Col w800="4">
+        <Col w800="4">
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col w800="4">
+        </Col>
+        <Col w800="4">
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col w800="4">
+        </Col>
+        <Col w800="4">
           <div className={ style.block } />
-        </Grid.Col>
+        </Col>
       </Grid>
 
       <p>
@@ -65,15 +65,15 @@ function GridPage(): JSX.Element {
       </p>
 
       <Grid>
-        <Grid.Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col>
+        </Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
-        <Grid.Col>
+        </Col>
+        <Col>
           <div className={ style.block } />
-        </Grid.Col>
+        </Col>
       </Grid>
 
       <p>
@@ -81,23 +81,23 @@ function GridPage(): JSX.Element {
       </p>
 
       <Grid>
-        <Grid.Col w640="7">
+        <Col w640="7">
           <div className={ style.block }>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, enim hic. Optio, mollitia repellat adipisci ullam debitis fugit a alias nam qui quis expedita praesentium similique accusantium quaerat dolore rerum.
           </div>
-        </Grid.Col>
+        </Col>
 
-        <Grid.Col w640="7">
+        <Col w640="7">
           <div className={ style.block }>
             asdjgdf gosdj fogisj doifgjs oidjfgs dfg sdf gsd fsgdf
           </div>
-        </Grid.Col>
+        </Col>
 
-        <Grid.Col hide="640">
+        <Col hide="640">
           <div className={ style.block }>
             isodjsdifjgsoidjfogisjdfoigjsdofijgsdifjgshdfgisuhdfoigshdfighsdfghsdfhgsidfhgsidhfgisdhfgiushdfiguhsdfighsdiufhgsidhfgishdfgishdfigushdfgh
           </div>
-        </Grid.Col>
+        </Col>
       </Grid>
 
     </div>
