@@ -1,8 +1,27 @@
 import * as React from 'react'
-import { Select, List } from '../../components'
-import { Grid, Col, Button, Checkbox, Input, Container, Dimmer, configDimmer } from '@project/ui'
+import {
+  Grid,
+  Col,
+  Button,
+  Checkbox,
+  Input,
+  Container,
+  Select,
+  List,
+  ListItem,
+  Dimmer,
+  Modal,
+  ModalContent,
+  configDimmer
+} from '@project/ui'
 import { css } from '../../libs'
 
+
+const LIST = [
+  { text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+  { text: 'Sed harum culpa eveniet totam magni quae, doloremque deleniti voluptas quis at?' },
+  { text: 'Molestias officia repudiandae esse cupiditate quod sapiente ex animi nisi?' }
+]
 
 function DropdownsPage(): JSX.Element {
   const [state, setState] = React.useState({
@@ -16,7 +35,13 @@ function DropdownsPage(): JSX.Element {
         <h1>Dropdowns</h1>
       </Container>
 
-      {/* <Dimmer />  */}
+      <Dimmer>
+        <Modal>
+          <ModalContent>
+            123
+          </ModalContent>
+        </Modal>
+      </Dimmer>
 
       <Grid padded>
         <Col>
@@ -113,17 +138,17 @@ function DropdownsPage(): JSX.Element {
       <br/>
 
       <List>
-        {
-          [ 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-            'Sed harum culpa eveniet totam magni quae, doloremque deleniti voluptas quis at?',
-            'Molestias officia repudiandae esse cupiditate quod sapiente ex animi nisi?'
-          ].map((text): React.ReactElement => (
-            <List.Item key={ text }>
-              { text }
-            </List.Item>
-          ))
+        { LIST.map((item, i): React.ReactElement => (
+          <ListItem key={ i }>
+            { item.text }
+          </ListItem>
+        ))
         }
       </List>
+
+      <br/>
+
+      <List list={ LIST.map((x): string => x.text) } />
     </div>
   )
 }
