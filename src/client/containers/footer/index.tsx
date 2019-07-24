@@ -1,13 +1,13 @@
 import * as React from 'react'
-import { Col } from '@project/ui'
+import { Grid } from '@project/ui'
 import style from './style.styl'
 
 
 function Footer(): JSX.Element {
   return (
-    <Col className={ style.footer } auto>
+    <Grid.Col className={ style.footer } auto>
       footer
-    </Col>
+    </Grid.Col>
   )
 }
 

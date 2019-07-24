@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Col } from '@project/ui'
+import { Grid } from '@project/ui'
 import Buttons from './pages/buttons/Buttons'
 import GridPage from './pages/grid'
 import DropdownsPage from './pages/dropdowns'
@@ -31,7 +31,7 @@ const _routes: IRoutesObject[] = [
 
 function Routes({ routes = _routes }: IRoutesProps): JSX.Element {
   return (
-    <Col>
+    <Grid.Col>
       <Switch>
         { routes.map((route, i): JSX.Element => (
           <Route
@@ -49,7 +49,7 @@ function Routes({ routes = _routes }: IRoutesProps): JSX.Element {
         ))
         }
       </Switch>
-    </Col>
+    </Grid.Col>
   )
 }
 

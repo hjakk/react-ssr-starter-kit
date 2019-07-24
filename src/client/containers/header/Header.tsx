@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { Grid, Col } from '@project/ui'
+import { Grid } from '@project/ui'
 import { css } from '../../libs'
 import style from './style.styl'
 
@@ -14,7 +14,7 @@ const MENU = [
 
 function Header(): JSX.Element {
   return (
-    <Col className={ style.header } auto>
+    <Grid.Col className={ style.header } auto>
       <Grid className={ css.center }>
         Header
 
@@ -27,7 +27,7 @@ function Header(): JSX.Element {
           }
         </ul>
       </Grid>
-    </Col>
+    </Grid.Col>
   )
 }
 

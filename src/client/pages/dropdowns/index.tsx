@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {
   Grid,
-  Col,
   Button,
   Checkbox,
   Input,
@@ -11,8 +10,8 @@ import {
   ListItem,
   Dimmer,
   Modal,
-  ModalContent,
-  configDimmer
+  // ModalContent,
+  // configDimmer
 } from '@project/ui'
 import { css } from '../../libs'
 
@@ -37,20 +36,30 @@ function DropdownsPage(): JSX.Element {
 
       <Dimmer>
         <Modal>
-          <ModalContent>
-            123
-          </ModalContent>
+          <Modal.Content>
+            <h2>Modal</h2>
+          </Modal.Content>
+          <Modal.Content>
+            <p>123</p>
+          </Modal.Content>
+          <Modal.Content>
+            <Grid jc="flex-end">
+              <Grid.Col auto>
+                <Button size="2">ok</Button>
+              </Grid.Col>
+            </Grid>
+          </Modal.Content>
         </Modal>
       </Dimmer>
 
       <Grid padded>
-        <Col>
+        <Grid.Col>
           <Checkbox>checkbox 1</Checkbox>
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <Grid padded>
-        <Col auto>
+        <Grid.Col auto>
           <Select
             value={ state.value1 }
             onChange={ (value: any): void => setState({ ...state, value1: value }) } // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -63,76 +72,76 @@ function DropdownsPage(): JSX.Element {
             ]}
             size="1"
           />
-        </Col>
+        </Grid.Col>
 
-        <Col>
+        <Grid.Col>
           { state.value1 && state.value1.text }
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <Grid padded>
-        <Col w320="14">
+        <Grid.Col w320="14">
           <Input style={{ fontSize: '4em' }} />
-        </Col>
+        </Grid.Col>
 
-        <Col w320="14">
+        <Grid.Col w320="14">
           <Input style={{ fontSize: '2em' }} />
-        </Col>
+        </Grid.Col>
 
-        <Col w320="14">
+        <Grid.Col w320="14">
           <Input />
-        </Col>
+        </Grid.Col>
 
-        <Col w320="14">
+        <Grid.Col w320="14">
           <Input clearable={ false } />
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <br/>
 
       <Grid padded>
-        <Col auto ai="center">
+        <Grid.Col auto ai="center">
           <label>Label text 1</label>
-        </Col>
-        <Col auto col="3">
+        </Grid.Col>
+        <Grid.Col auto col="3">
           <Input />
-        </Col>
-        <Col>
+        </Grid.Col>
+        <Grid.Col>
           <Button>button</Button>
           <button>default</button>
           <input value="default input" type="text" readOnly />
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <Grid padded>
-        <Col auto ai="center">
+        <Grid.Col auto ai="center">
           <label>Label text 2</label>
-        </Col>
-        <Col auto col="3">
+        </Grid.Col>
+        <Grid.Col auto col="3">
           <Input size="1" />
-        </Col>
-        <Col>
+        </Grid.Col>
+        <Grid.Col>
           <Button size="1">button</Button>
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <Grid padded>
-        <Col auto ai="center">
+        <Grid.Col auto ai="center">
           <label>Label text 3</label>
-        </Col>
-        <Col auto col="3">
+        </Grid.Col>
+        <Grid.Col auto col="3">
           <Input
             value={ state.value2 }
             onChange={ (v: string): void => setState({ ...state, value2: v }) }
             size="2"
           />
-        </Col>
-        <Col auto>
+        </Grid.Col>
+        <Grid.Col auto>
           <Button size="2">button</Button>
-        </Col>
-        <Col>
+        </Grid.Col>
+        <Grid.Col>
           <p>{ state.value2 }</p>
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <br/>

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Grid, Col } from '@project/ui'
+import { Button, Grid } from '@project/ui'
 import { css } from '../../libs'
 
 
@@ -13,15 +13,15 @@ function Buttons(): JSX.Element {
       </p>
 
       <Grid padded>
-        <Col auto>
+        <Grid.Col auto>
           <Button>Button 1</Button>
-        </Col>
-        <Col auto>
+        </Grid.Col>
+        <Grid.Col auto>
           <Button size="1">Button 2</Button>
-        </Col>
-        <Col auto>
+        </Grid.Col>
+        <Grid.Col auto>
           <Button size="2">Button 3</Button>
-        </Col>
+        </Grid.Col>
       </Grid>
 
       <p>
