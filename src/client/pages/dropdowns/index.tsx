@@ -8,11 +8,11 @@ import {
   Select,
   List,
   ListItem,
-  Dimmer,
   Modal,
   // ModalContent,
   // configDimmer
 } from '@project/ui'
+import { withState } from '../../App'
 import { css } from '../../libs'
 
 
@@ -21,6 +21,55 @@ const LIST = [
   { text: 'Sed harum culpa eveniet totam magni quae, doloremque deleniti voluptas quis at?' },
   { text: 'Molestias officia repudiandae esse cupiditate quod sapiente ex animi nisi?' }
 ]
+
+function Mod(props): React.ReactElement {
+  console.log( props )
+  return (
+    <Modal>
+      <Modal.Content>
+        <h2>Modal</h2>
+      </Modal.Content>
+      <Modal.Content>
+        <>
+          <p>Select</p>
+          <Select
+            onChange={ console.log } // eslint-disable-line @typescript-eslint/no-explicit-any
+            list={[
+              { id: 1, text: 'first' },
+              { id: 2, text: 'second' },
+              { id: 3, text: 'third' },
+              { id: 4, text: 'fourth' },
+              { id: 5, text: 'fiveth' },
+            ]}
+            size="1"
+          />
+        </>
+      </Modal.Content>
+      <Modal.Content>
+        <Grid jc="flex-end">
+          <Grid.Col auto>
+            <Button size="2">ok</Button>
+          </Grid.Col>
+        </Grid>
+      </Modal.Content>
+    </Modal>
+  )
+}
+
+const ToggleModal = withState(function _ToggleModal({ modals, setModals }) {
+  return (
+    <Button
+      onClick={ (): void => {
+        const list = modals.slice()
+        list.push(() => <Mod name="Jack" />)
+        setModals(list)
+      }}
+    >
+      toggle modal
+    </Button>
+  )
+})
+
 
 function DropdownsPage(): JSX.Element {
   const [state, setState] = React.useState({
@@ -34,23 +83,7 @@ function DropdownsPage(): JSX.Element {
         <h1>Dropdowns</h1>
       </Container>
 
-      <Dimmer>
-        <Modal>
-          <Modal.Content>
-            <h2>Modal</h2>
-          </Modal.Content>
-          <Modal.Content>
-            <p>123</p>
-          </Modal.Content>
-          <Modal.Content>
-            <Grid jc="flex-end">
-              <Grid.Col auto>
-                <Button size="2">ok</Button>
-              </Grid.Col>
-            </Grid>
-          </Modal.Content>
-        </Modal>
-      </Dimmer>
+      <ToggleModal />
 
       <Grid padded>
         <Grid.Col>
