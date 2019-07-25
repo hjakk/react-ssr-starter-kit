@@ -1,5 +1,5 @@
 import * as React from 'react'
-// import { Grid } from '@project/ui'
+import { Divider, Text } from '@project/ui'
 import ExampleButtons from './example-buttons'
 import ExampleCheckbox from './example-checkbox'
 import ExampleGrid from './example-grid'
@@ -10,7 +10,9 @@ import { css } from '../../libs'
 function ExamplesPage(): React.ReactElement {
   return (
     <div className={ css.center }>
-      <h1>Examples</h1>
+      <Divider size="3">
+        <Text as="h1">Examples</Text>
+      </Divider>
 
       <ExampleButtons />
       <ExampleCheckbox />

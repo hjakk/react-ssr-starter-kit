@@ -25,13 +25,6 @@ function ExampleGrid(): React.ReactElement {
         <Grid.Col><div style={ styleBlock } /></Grid.Col>
       </Grid>
 
-      <Text as="h3" u>Padded</Text>
-      <Grid padded>
-        <Grid.Col><div style={ styleBlock } /></Grid.Col>
-        <Grid.Col><div style={ styleBlock } /></Grid.Col>
-        <Grid.Col><div style={ styleBlock } /></Grid.Col>
-      </Grid>
-
       <Text as="h3" u>Auto size</Text>
       <Grid padded>
         <Grid.Col auto><div style={{ ...styleBlock, minWidth: '200px' }} /></Grid.Col>
@@ -58,6 +51,17 @@ function ExampleGrid(): React.ReactElement {
         <Grid.Col col="1"><div style={ styleBlock }>col="1"</div></Grid.Col>
         <Grid.Col col="2"><div style={ styleBlock }>col="2"</div></Grid.Col>
         <Grid.Col col="3"><div style={ styleBlock }>col="3"</div></Grid.Col>
+        <Grid.Col col="4"><div style={ styleBlock }>col="4"</div></Grid.Col>
+        <Grid.Col col="5"><div style={ styleBlock }>col="5"</div></Grid.Col>
+        <Grid.Col col="6"><div style={ styleBlock }>col="6"</div></Grid.Col>
+        <Grid.Col col="7"><div style={ styleBlock }>col="7"</div></Grid.Col>
+        <Grid.Col col="8"><div style={ styleBlock }>col="8"</div></Grid.Col>
+        <Grid.Col col="9"><div style={ styleBlock }>col="9"</div></Grid.Col>
+        <Grid.Col col="10"><div style={ styleBlock }>col="10"</div></Grid.Col>
+        <Grid.Col col="11"><div style={ styleBlock }>col="11"</div></Grid.Col>
+        <Grid.Col col="12"><div style={ styleBlock }>col="12"</div></Grid.Col>
+        <Grid.Col col="13"><div style={ styleBlock }>col="13"</div></Grid.Col>
+        <Grid.Col col="14"><div style={ styleBlock }>col="14"</div></Grid.Col>
       </Grid>
 
       <Text as="h3" u>Media queries</Text>
