@@ -1,10 +1,9 @@
 :global
-  html 
+  html
     box-sizing: border-box
 
   html
   body
-  #root 
     height: 100%
 
   body
@@ -13,12 +12,13 @@
   #root
     display: flex
     flex-direction: column
+    min-height: 100%
 
   *,
   *::before,
-  *::after 
+  *::after
     box-sizing: inherit
-  
+
   p, h1, h2, h3, h4, h5, h6, ul, ol
     &:first-child
       margin-top: 0

@@ -4,21 +4,22 @@ import { Grid } from '@project/ui'
 import Buttons from './pages/buttons/Buttons'
 import GridPage from './pages/grid'
 import DropdownsPage from './pages/dropdowns'
+import ExamplesPage from './pages/examples'
 import Main from './pages/main/Main'
 
 
-interface IRoutesObject {
+interface RoutesObject {
   path?: string
   exact?: boolean
   component?: React.ComponentType
   render?: () => JSX.Element
 }
 
-interface IRoutesProps {
-  routes?: IRoutesObject[]
+interface RoutesProps {
+  routes?: RoutesObject[]
 }
 
-const _routes: IRoutesObject[] = [
+const _routes: RoutesObject[] = [
   { path: '/', exact: true, component: Main,
     // routes: [
     //   { path: '/', exact: true, component: Home }
@@ -29,7 +30,9 @@ const _routes: IRoutesObject[] = [
   { path: '/dropdowns', component: DropdownsPage },
 ]
 
-function Routes({ routes = _routes }: IRoutesProps): JSX.Element {
+if (window.location.hostname === 'localhost') _routes.push({ path: '/examples', component: ExamplesPage })
+
+function Routes({ routes = _routes }: RoutesProps): JSX.Element {
   return (
     <Grid.Col>
       <Switch>
