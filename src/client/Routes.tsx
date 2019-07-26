@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Grid } from '@project/ui'
+import { Grid } from 'react-project-ui'
 import Buttons from './pages/buttons/Buttons'
 import GridPage from './pages/grid'
 import DropdownsPage from './pages/dropdowns'

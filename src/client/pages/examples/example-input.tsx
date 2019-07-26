@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Divider, Text, Grid, Input } from '@project/ui'
+import { Divider, Text, Grid, Input } from 'react-project-ui'
 
 
 function ExampleInput(): React.ReactElement {

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { withState } from '../../App'
-import { Dimmer } from '@project/ui'
+import { Dimmer } from 'react-project-ui'
 
 
 interface Props {

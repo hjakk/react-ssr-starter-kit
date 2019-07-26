@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
+    "lint": "eslint src/client --ext .ts,.tsx,.js,.jsx -c .eslintrc",
     "build:client": "webpack --mode production --config config/webpack.client.js",
     "build:server": "webpack --mode production --config config/webpack.server.js",
     "build": "npm run clean && npm run build:client && npm run build:server",
@@ -15,6 +16,9 @@
     "start": "npm run clean && webpack-dev-server --env.SSR_DISABLED=true --mode development --progress --config config/webpack.client.js",
     "server": "nodemon dist"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "keywords": [],
   "author": "hjakk",
   "license": "MIT",
@@ -54,6 +58,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-modules": "^1.4.1",
     "postcss-nested": "^4.1.2",
+    "pre-commit": "^1.2.2",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "rimraf": "^2.6.3",

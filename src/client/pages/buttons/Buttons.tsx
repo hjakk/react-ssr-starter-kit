@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Grid } from '@project/ui'
+import { Button, Grid } from 'react-project-ui'
 import { css } from '../../libs'
 
 

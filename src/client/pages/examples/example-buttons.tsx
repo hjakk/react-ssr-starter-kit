@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Grid, Text, Divider, Button, buttonConfig } from '@project/ui'
+import { Grid, Text, Divider, Button } from 'react-project-ui'
 
 // buttonConfig.set = { defaults: { size: null } }
 

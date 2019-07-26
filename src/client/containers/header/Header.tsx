@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { Grid } from '@project/ui'
+import { Grid } from 'react-project-ui'
 import { css } from '../../libs'
 import style from './style.styl'
 

@@ -3,16 +3,15 @@ import Header from './containers/header/Header'
 import Footer from './containers/footer'
 import Modals from './containers/modals'
 import Routes from './Routes'
-import { Modal, Grid, Button } from '@project/ui'
 
 
 const Context = React.createContext({})
 
-function withState(Component) {
-  return function Connected(props) {
+function withState(Component: React.SFC): React.SFC {
+  return function Connected(props): React.ReactElement {
     return (
       <Context.Consumer>
-        { (data) => <Component { ...data } { ...props } /> }
+        { (data): React.ReactElement => <Component { ...data } { ...props } /> }
       </Context.Consumer>
     )
   }

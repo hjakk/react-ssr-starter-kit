@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Grid, Text, Divider, Checkbox } from '@project/ui'
+import { Grid, Text, Divider, Checkbox } from 'react-project-ui'
 
 
 function ExampleCheckbox(): React.ReactElement {
