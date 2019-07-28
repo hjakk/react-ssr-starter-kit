@@ -1,7 +1,11 @@
 {
   "presets": [
+    "@babel/react",
     [
       "@babel/env",
+      {
+        "modules": false
+      }
       // {
       //   "loose": true,
       //   "shippedProposals": true,
@@ -10,8 +14,7 @@
       //     "ie": 9
       //   }
       // }
-    ],
-    "@babel/react"
+    ]
   ],
   "plugins": ["@babel/plugin-syntax-dynamic-import"]
 }

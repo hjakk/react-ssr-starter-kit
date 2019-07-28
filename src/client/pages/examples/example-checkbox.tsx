@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Grid, Text, Divider, Checkbox } from 'react-project-ui'
+import { Grid, Typ, Divider, Checkbox } from 'react-project-ui'
 
 
 function ExampleCheckbox(): React.ReactElement {
@@ -15,13 +15,13 @@ function ExampleCheckbox(): React.ReactElement {
   return (
     <div>
       <Divider size="3">
-        <Text as="h2" u>Checkboxes</Text>
+        <Typ as="h3" u>Checkboxes</Typ>
       </Divider>
 
-      <Text as="h3">Sizes</Text>
+      <Typ as="h4">Sizes</Typ>
 
       <Grid padded>
-        <Grid.Col col="4">
+        <Grid.Col size="4">
           <Grid padded>
             <Grid.Col auto>
               <Checkbox

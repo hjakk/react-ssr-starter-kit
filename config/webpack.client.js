@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 
 module.exports = (env, argv) => {
@@ -43,6 +45,7 @@ module.exports = (env, argv) => {
       // build speed optimization, try this options if needed
       // removeAvailableModules: false,
       // removeEmptyChunks: false,
+      usedExports: true,
       minimizer: [
         new TerserJSPlugin(),
         new OptimizeCSSAssetsPlugin(),
@@ -62,7 +65,7 @@ module.exports = (env, argv) => {
                 // build speed optimization for development
                 // turn off typescript type checking
                 // try to use fork-ts-checker-webpack-plugin for separate checking if needed
-                transpileOnly: isDev,
+                transpileOnly: true,
                 experimentalWatchApi: isDev,
               }
             }
@@ -106,7 +109,8 @@ module.exports = (env, argv) => {
               options: {
                 localsConvention: 'camelCase',
                 modules: {
-                  localIdentName: isDev? '[local]-[hash:base64:5]' : '[hash:base64:5]',
+                  // localIdentName: isDev? '[local]-[hash:base64:5]' : '[hash:base64:5]',
+                  localIdentName: '[local]-[hash:base64:5]',
                 },
               }
             },
@@ -130,7 +134,7 @@ module.exports = (env, argv) => {
             { loader: 'file-loader',
               options: {
                 name: `[name].[ext]?[hash]`,
-                outputPath: 'assets/images',
+                outputPath: 'images',
               }
             }
           ],
@@ -140,31 +144,36 @@ module.exports = (env, argv) => {
             { loader: 'file-loader',
               options: {
                 name: `[name].[ext]?[hash]`,
-                outputPath: 'assets/fonts'
+                outputPath: 'fonts'
               }
             }
           ],
         }
       ]
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: `./src/client/index.pug`,
-        filename: `./index.html`,
-        chunks: ['client'],
-      }),
-      // new HtmlWebpackPlugin({
-      //   template: `./src/admin/index.pug`,
-      //   filename: `./admin/index.html`,
-      //   chunks: ['admin'],
-      // }),
-      new MiniCssExtractPlugin({
-        filename: isDev ? `styles/[name].css` : `styles/[name].[hash].css`,
-        chunkFilename: isDev ? `styles/[id].css` : `styles/[id].[hash].css`,
-      }),
-      // new webpack.HotModuleReplacementPlugin(),
-      new webpack.DefinePlugin(ENV)
-    ],
+    plugins: (() => {
+      const arr = [
+        new HtmlWebpackPlugin({
+          template: `./src/client/index.pug`,
+          filename: `./index.html`,
+          chunks: ['client'],
+        }),
+        // new HtmlWebpackPlugin({
+        //   template: `./src/admin/index.pug`,
+        //   filename: `./admin/index.html`,
+        //   chunks: ['admin'],
+        // }),
+        new MiniCssExtractPlugin({
+          filename: isDev ? `styles/[name].css` : `styles/[name].[hash].css`,
+          chunkFilename: isDev ? `styles/[id].css` : `styles/[id].[hash].css`,
+        }),
+        // new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin(ENV),
+        // new BundleAnalyzerPlugin(),
+      ]
+      if (!isDev) arr.push(new CompressionPlugin())
+      return arr
+    })(),
     devServer: {
       host: '0.0.0.0',
       contentBase: './dist',

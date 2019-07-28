@@ -1,22 +1,21 @@
 import * as React from 'react'
-import { Divider, Text, Grid } from 'react-project-ui'
-import { withState } from '../../App'
+import { Divider, Typ, Grid, Modal, Button } from 'react-project-ui'
+import { withModal, SomeModalLayout } from '../../containers/modals'
 
 
 function ExampleModal(props: any): React.ReactElement {
-  console.log( props )
   return (
     <div>
       <Divider size="3">
-        <Text as="h2" u>Modal</Text>
+        <Typ as="h3" u>Modal</Typ>
       </Divider>
 
-      {/* <Text as="h3">Sizes</Text> */}
-
-      <Grid padded>
-      </Grid>
+      {/* <Typ as="h3">Sizes</Typ> */}
+      <Button onClick={ (): void => props.toggleModal((props): unknown => <SomeModalLayout title="Some modal title" />) }>Open modal</Button>
+      {/* <Grid padded>
+      </Grid> */}
     </div>
   )
 }
 
-export default React.memo(withState(ExampleModal))
+export default React.memo(withModal(ExampleModal))

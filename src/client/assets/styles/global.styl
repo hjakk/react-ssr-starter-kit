@@ -1,27 +1,33 @@
-:global
-  html
-    box-sizing: border-box
+:global {
+  html {
+    box-sizing: border-box;
+  }
 
-  html
-  body
-    height: 100%
+  html, body {
+    height: 100%;
+  }
 
-  body
-    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif
+  body {
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  }
 
-  #root
-    display: flex
-    flex-direction: column
-    min-height: 100%
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
 
-  *,
-  *::before,
-  *::after
-    box-sizing: inherit
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
-  p, h1, h2, h3, h4, h5, h6, ul, ol
-    &:first-child
-      margin-top: 0
+  p, h1, h2, h3, h4, h5, h6, ul, ol {
+    &:first-child {
+      margin-top: 0;
+    }
 
-    &:last-child
-      margin-bottom: 0
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

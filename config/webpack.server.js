@@ -34,7 +34,7 @@ module.exports = (env, argv) => {
             'babel-loader',
             { loader: 'ts-loader',
               options: {
-                transpileOnly: isDev,
+                transpileOnly: true,
                 experimentalWatchApi: isDev,
               }
             }

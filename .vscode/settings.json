@@ -8,6 +8,9 @@
     "javascript": "javascriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -15,7 +18,7 @@
     "typescriptreact"
   ],
   "files.associations": {
-    "*.pcss": "postcss"
+    "*.css": "css"
   },
   "eslint.enable": true
 }

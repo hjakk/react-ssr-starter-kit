@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Divider, Text, Grid, Select } from 'react-project-ui'
+import { Divider, Typ, Grid, Select } from 'react-project-ui'
 
 
 const OPTIONS = [{ id: 1, text: 'Option 1' }, { id: 2, text: 'Option 2' }, { id: 3, text: 'Option 3' }, { id: 4, text: 'Option 4' }]
@@ -19,18 +19,18 @@ function ExampleSelect(): React.ReactElement {
   return (
     <div>
       <Divider size="3">
-        <Text as="h2" u>Select</Text>
+        <Typ as="h3" u>Select</Typ>
       </Divider>
 
-      <Text as="h3">Sizes</Text>
+      <Typ as="h4">Sizes</Typ>
 
       <Grid>
-        <Grid.Col col="5">
+        <Grid.Col size="5">
           <Grid padded>
-            <Grid.Col col="4">
+            <Grid.Col size="4">
               Default
             </Grid.Col>
-            <Grid.Col col="6">
+            <Grid.Col size="6">
               <Select
                 value={ state.value1 }
                 name="value1"
@@ -41,10 +41,10 @@ function ExampleSelect(): React.ReactElement {
           </Grid>
 
           <Grid padded>
-            <Grid.Col col="4">
+            <Grid.Col size="4">
               No size
             </Grid.Col>
-            <Grid.Col col="6">
+            <Grid.Col size="6">
               <Select
                 value={ state.value2 }
                 name="value2"
@@ -56,10 +56,10 @@ function ExampleSelect(): React.ReactElement {
           </Grid>
 
           <Grid padded>
-            <Grid.Col col="4">
+            <Grid.Col size="4">
               Size 1
             </Grid.Col>
-            <Grid.Col col="6">
+            <Grid.Col size="6">
               <Select
                 value={ state.value3 }
                 name="value3"
@@ -71,10 +71,10 @@ function ExampleSelect(): React.ReactElement {
           </Grid>
 
           <Grid padded>
-            <Grid.Col col="4">
+            <Grid.Col size="4">
               Size 2
             </Grid.Col>
-            <Grid.Col col="6">
+            <Grid.Col size="6">
               <Select
                 value={ state.value4 }
                 name="value4"

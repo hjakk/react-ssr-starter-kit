@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Divider, Text, Grid, Input } from 'react-project-ui'
+import { Divider, Typ, Grid, Input } from 'react-project-ui'
 
 
 function ExampleInput(): React.ReactElement {
@@ -17,16 +17,16 @@ function ExampleInput(): React.ReactElement {
   return (
     <div>
       <Divider size="3">
-        <Text as="h2" u>Inputs</Text>
+        <Typ as="h3" u>Inputs</Typ>
       </Divider>
 
       <Grid>
-        <Grid.Col col="5">
+        <Grid.Col size="5">
           <Grid padded>
-            <Grid.Col col="4" auto>
+            <Grid.Col size="4" auto>
               Default size:
             </Grid.Col>
-            <Grid.Col col="6" auto>
+            <Grid.Col size="6" auto>
               <Input
                 value={ state.value1 }
                 name="value1"
@@ -36,10 +36,10 @@ function ExampleInput(): React.ReactElement {
           </Grid>
 
           <Grid padded>
-            <Grid.Col col="4" auto>
+            <Grid.Col size="4" auto>
               No size:
             </Grid.Col>
-            <Grid.Col col="6" auto>
+            <Grid.Col size="6" auto>
               <Input
                 value={ state.value2 }
                 name="value2"
@@ -50,10 +50,10 @@ function ExampleInput(): React.ReactElement {
           </Grid>
 
           <Grid padded>
-            <Grid.Col col="4" auto>
+            <Grid.Col size="4" auto>
               Size 1:
             </Grid.Col>
-            <Grid.Col col="6" auto>
+            <Grid.Col size="6" auto>
               <Input
                 value={ state.value3 }
                 name="value3"
@@ -64,10 +64,10 @@ function ExampleInput(): React.ReactElement {
           </Grid>
 
           <Grid padded>
-            <Grid.Col col="4" auto>
+            <Grid.Col size="4" auto>
               Size 2:
             </Grid.Col>
-            <Grid.Col col="6" auto>
+            <Grid.Col size="6" auto>
               <Input
                 value={ state.value4 }
                 name="value4"

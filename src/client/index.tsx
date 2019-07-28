@@ -1,14 +1,14 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import 'normalize.css'
-import './assets/styles/global'
+import './assets/styles/global.styl'
 import './types/declarations'
 import './assets/svg-sprites'
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import App from './App'
+import App from './app'
 
 
 function Client(): JSX.Element {
