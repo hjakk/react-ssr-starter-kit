@@ -40,7 +40,7 @@ function ExampleDropdown(): React.ReactElement {
       <Typ as="h4">Custom dropdown with mouse handler</Typ>
       <Grid>
         <Grid.Col size="1">
-          <Dropdown>
+          <Dropdown onMouse>
             <Trigger />
             <Dropdown.Content theme="menu-1">
               <Menu onChange={ setValue } />
