@@ -1,6 +1,6 @@
-# React SSR Start Kit
+# React SSR Starter Kit
 
-**Featrues:**
+**Features:**
 * Webpack 4
 * Babel 7
 * React
