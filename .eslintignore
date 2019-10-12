@@ -1,2 +1,3 @@
-config/
 dist/
+webpack.config.js
+postcss.config.js
