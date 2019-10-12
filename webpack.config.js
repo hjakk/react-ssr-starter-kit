@@ -75,6 +75,13 @@ const configure = (type) => (env, argv) => {
           return arr
         })()
       },
+      { test: /\.css$/i,
+        use: isServer ? 'ignore-loader'
+          : [
+            MiniCssExtractPlugin.loader,
+            'css-loader'
+          ]
+      },
       { test: /\.(jpg|png|gif)$/i,
         include: [path.resolve(__dirname, 'src')],
         use: [
