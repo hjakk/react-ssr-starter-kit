@@ -11,6 +11,7 @@
 * CSS Modules
 * PostCSS
 * Express
+* SVG sprites
 
 ## Usage
 
