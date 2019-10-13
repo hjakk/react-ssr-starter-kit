@@ -4,7 +4,7 @@ import path from 'path'
 import cheerio from 'cheerio'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
-import App from '../client/App'
+import App from '../client/app.tsx'
 
 
 export default (req, res) => {

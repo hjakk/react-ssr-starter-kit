@@ -1,5 +1,5 @@
 {
-  "name": "webpack-react-layout",
+  "name": "react-ssr-starter-kit",
   "version": "0.1.0",
   "author": "hjakk",
   "license": "MIT",
@@ -11,9 +11,13 @@
     "ssr"
   ],
   "main": "dist/index.js",
+  "homepage": "https://github.com/hjakk/react-ssr-starter-kit#readme",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/hjakk/react-ssr-starter-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hjakk/react-ssr-starter-kit/issues"
   },
   "pre-commit": [
     "lint"
