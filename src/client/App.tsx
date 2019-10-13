@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { Modals, Routes } from './containers'
+import Modals from './containers/modals'
+import Routes from './containers/routes'
 import AboutPage from './pages/about'
 import MainPage from './pages/main'
 import SubroutesPage, { Route1Page, Route2Page } from './pages/subroutes'
