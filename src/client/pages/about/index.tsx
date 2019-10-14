@@ -1,8 +1,11 @@
 import * as React from 'react'
 import { withModals } from '../../containers/modals'
+import useGlobal from '../../store'
 
 
 function AboutPage({ openModal }: any): React.ReactElement {
+  const [state, setState] = useGlobal()
+
   const _openExampleModal = React.useCallback(() => {
     openModal('example', {
       someText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur vitae autem porro in ratione, dolor sapiente sequi est facere id debitis voluptates quia quidem illo! Architecto, eveniet. Et, voluptas exercitationem!'
@@ -43,7 +46,14 @@ function AboutPage({ openModal }: any): React.ReactElement {
       </pre>
 
       <div>
+        <h2>Modals example</h2>
         <button onClick={ _openExampleModal }>Modal example</button>
+      </div>
+
+      <div>
+        <h2>Global state example</h2>
+        <p>{ state.counter }</p>
+        <button onClick={ () => setState.incCounter(1) }>inc</button>
       </div>
     </div>
   )
