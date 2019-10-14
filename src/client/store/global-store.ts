@@ -74,7 +74,7 @@ function associateActions(store: Store, actions: Actions): Actions {
   return associatedActions
 }
 
-const useStore = (React: any, initialState: State, actions: Actions, initializer?: (store: Store) => any): () => CustomReturn => {
+const useStore = (React: any, initialState: State, actions: Actions, initializer?: (store: Store) => any): (() => CustomReturn) => {
   const store: Store = { state: initialState, listeners: [] }
   store.setState = setState.bind(null, store) as typeof setState
   store.actions = associateActions(store, actions)

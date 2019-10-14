@@ -23,7 +23,7 @@ const routes = [
 
 function App(): React.ReactElement {
   return (
-    <Modals>
+    <div>
       <ul>
         { routes.map((route) => {
           if (!route.path) return null
@@ -39,7 +39,8 @@ function App(): React.ReactElement {
       </ul>
 
       <Routes list={ routes } />
-    </Modals>
+      <Modals />
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { withModals } from '../../containers/modals'
+// import { withModals } from '../../containers/modals'
 import useGlobal from '../../store'
 
 
@@ -59,4 +59,4 @@ function AboutPage({ openModal }: any): React.ReactElement {
   )
 }
 
-export default withModals(AboutPage)
+export default AboutPage
