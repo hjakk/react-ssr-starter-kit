@@ -7,6 +7,8 @@ import MainPage from './pages/main'
 import SubroutesPage, { Route1Page, Route2Page } from './pages/subroutes'
 
 
+import { Test1, Test2, Message } from './store/global-store.tsx'
+
 // const isBrowser = typeof window !== 'undefined'
 
 const routes = [
@@ -22,8 +24,18 @@ const routes = [
 ]
 
 function App(): React.ReactElement {
+  const [show, setShow] = React.useState(true)
   return (
     <div>
+      <Test1 />
+      { show &&
+        <>
+          <Test2 />
+          <button onClick={ () => setShow(false) }>X</button>
+        </>
+      }
+      <Message />
+
       <ul>
         { routes.map((route) => {
           if (!route.path) return null

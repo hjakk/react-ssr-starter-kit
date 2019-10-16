@@ -1,16 +1,12 @@
 import * as React from 'react'
-import useStore from '../../store'
 import * as layouts from './layouts'
 import { _join } from '../../utils'
 import style from './style.styl'
 
 
 function Modals(): React.ReactElement {
-  const [{ modals }, { toggleModal }] = useStore()
-  console.log( '>>>', modals )
   return (
     <div>
-      <button onClick={ () => toggleModal({ name: 'example' }) }>toggle modal</button>
     </div>
   )
 }
