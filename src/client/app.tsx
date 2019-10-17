@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import Modals from './containers/modals'
+import Notices from './containers/notices'
 import Routes from './containers/routes'
 import AboutPage from './pages/about'
 import MainPage from './pages/main'
@@ -42,6 +43,7 @@ function App(): React.ReactElement {
 
       <Routes list={ routes } />
       <Modals />
+      <Notices />
     </div>
   )
 }

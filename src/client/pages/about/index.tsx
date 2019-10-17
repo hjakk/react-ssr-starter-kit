@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { modals } from '../../store'
+import { modals, notices } from '../../store'
 
 
 function AboutPage(): React.ReactElement {
@@ -45,6 +45,7 @@ function AboutPage(): React.ReactElement {
       <div>
         <h2>Modals example</h2>
         <button onClick={ _openExampleModal }>Modal example</button>
+        <button onClick={ (): void => notices.open('error', {}) }>Notice example</button>
       </div>
     </div>
   )

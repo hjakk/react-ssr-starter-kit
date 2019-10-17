@@ -18,6 +18,17 @@ export const modals = new Store({
   }
 })
 
+export const notices = new Store({
+  state: { list: [] },
+  actions: {
+    open: (type, params, state): any => {
+      const list = state.list.slice()
+      list.push({ type, ...params })
+      return { list }
+    }
+  }
+})
+
 export const counter = new Store({
   state: { count: 0 },
   actions: {
