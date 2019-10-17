@@ -7,9 +7,9 @@ function Counter2(): React.ReactElement {
   counter.init()
   return (
     <div className={ style.block }>
-      <h2>Counter 1</h2>
+      <h2>Counter 2</h2>
       <p>{ counter.state.count }</p>
-      <button onClick={ (): void => counter.inc(1) }>inc</button>
+      <button onClick={ (): void => counter.inc(5) }>inc +5</button>
     </div>
   )
 }
