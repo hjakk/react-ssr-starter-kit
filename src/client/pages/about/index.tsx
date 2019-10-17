@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { modals } from '../../store'
 
 
-function AboutPage({ openModal }: any): React.ReactElement {
+function AboutPage(): React.ReactElement {
   const _openExampleModal = React.useCallback(() => {
-    openModal('example', {
+    modals.open('example', {
       someText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur vitae autem porro in ratione, dolor sapiente sequi est facere id debitis voluptates quia quidem illo! Architecto, eveniet. Et, voluptas exercitationem!'
     })
   }, [])

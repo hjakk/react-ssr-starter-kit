@@ -1,24 +1,33 @@
-// import * as React from 'react'
-// import useGlobalStore from './global-store'
+import Store from './store'
 
 
-// const initialState = {
-//   counter: 0,
-//   modals: [],
-// }
+export const modals = new Store({
+  state: { list: [] },
+  actions: {
+    open: (name, params, state): any => {
+      const list = state.list.slice()
+      list.push({ name, ...params })
+      return { list }
+    },
+    close: (index?: number, state?): any => {
+      if (!state.list.length) return
+      const list = state.list.slice()
+      list.splice(index && index >= 0 ? index : state.list.length - 1)
+      return { list }
+    }
+  }
+})
 
-// const actions = {
-//   incCounter: (store: any, amount: number): void => {
-//     const counter = store.state.counter + amount
-//     store.setState({ counter })
-//   },
-//   toggleModal: (store, data) => {
-//     const modals = store.state.modals.slice()
-//     if (!modals.some((x) => x.name === data.name)) modals.push(data)
-//     store.setState({ modals })
-//   }
-// }
+export const counter = new Store({
+  state: { count: 0 },
+  actions: {
+    inc: (amount, state): any => ({ count: state.count + amount })
+  }
+})
 
-// const useGlobal = useGlobalStore(React, initialState, actions) // eslint-disable-line
-
-// export default useGlobal
+export const message = new Store({
+  state: { text: '' },
+  actions: {
+    onChange: ({ target }): any => ({ text: target.value })
+  }
+})
