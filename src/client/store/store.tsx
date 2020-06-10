@@ -25,8 +25,8 @@ class Store {
   }
 
   init = (): void => {
-    const [, setState] = React.useState({})
-    React.useEffect(() => {
+    const [, setState] = React.useState({}) // eslint-disable-line react-hooks/rules-of-hooks
+    React.useEffect(() => { // eslint-disable-line react-hooks/rules-of-hooks
       return (): void => {
         const i = this._listeners.indexOf(setState)
         if (i > -1) this._listeners.splice(i, 1)

@@ -2,7 +2,8 @@
   "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "plugins": [
     "react",
@@ -46,7 +47,9 @@
       "Object.assign",
       "Object.values",
       "Object.entries",
-      "promises"
+      "String.fromCodePoint",
+      "promises",
+      "Promise"
     ],
     "import/resolver": {
       "node": {
@@ -59,14 +62,18 @@
 
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-var-requires": "off",
-    // "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     // "@typescript-eslint/explicit-member-accessibility": "off",
-    // "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     // "@typescript-eslint/no-unused-vars": "off",
     // "@typescript-eslint/interface-name-prefix": ["", "always"],
 
     "no-unused-vars": "error",
+    "require-atomic-updates": "off",
     "compat/compat": "error",
     "sonarjs/cognitive-complexity": "off",
     "sonarjs/no-duplicate-string": "off",
@@ -79,7 +86,7 @@
     "security/detect-object-injection": "off",
     "security/detect-non-literal-fs-filename": "off",
     "valid-jsdoc": "error",
-    "array-callback-return": "error",
+    // "array-callback-return": "error",
     "block-scoped-var": "error",
     "default-case": "error",
     "eqeqeq": "error",
@@ -89,7 +96,7 @@
     "no-new-func": "error",
     "no-new-wrappers": "error",
     "no-return-assign": "error",
-    "no-return-await": "error",
+    // "no-return-await": "error",
     "no-script-url": "error",
     "no-self-assign": "error",
     "no-self-compare": "error",
@@ -120,7 +127,7 @@
     "no-tabs": "error",
     "no-whitespace-before-property": "error",
     "nonblock-statement-body-position": "error",
-    "object-curly-spacing": ["error", "always", { "objectsInObjects": false }],
+    "object-curly-spacing": ["error", "always"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "semi": ["error", "never"],
     "semi-spacing": "error",
@@ -181,12 +188,12 @@
     "react/jsx-boolean-value": "error",
     "react/jsx-closing-bracket-location": "error",
     "react/jsx-closing-tag-location": "error",
-    "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
+    // "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
     // "react/jsx-curly-newline": ["error", {
     //   "multiline": "forbid",
     //   "singleline": "consistent"
     // }],
-    "react/jsx-indent": ["error", 2, { "checkAttributes": true, "indentLogicalExpressions": true }],
+    "react/jsx-indent": ["error", 2, { "checkAttributes": false, "indentLogicalExpressions": true }],
     "react/jsx-curly-spacing": ["error", {
       "when": "always",
       "spacing": { "objectLiterals": "never" },
@@ -201,7 +208,7 @@
     "react/jsx-pascal-case": "error",
     "react/jsx-props-no-multi-spaces": "error",
     "react/jsx-sort-props": ["error", {
-      "shorthandLast": true,
+      // "shorthandLast": true,
       "ignoreCase": false,
       "noSortAlphabetically": true,
       "reservedFirst": false,

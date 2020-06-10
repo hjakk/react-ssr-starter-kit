@@ -19,10 +19,18 @@ const configure = (type) => (env, argv) => {
     mode: argv.mode,
     target: isServer ? 'node' : 'web',
     devtool: isDev ? 'eval-source-map' : false,
+    /**
+     * Configure how performance hints are shown. For example if you have an asset that is over 250kb, webpack will emit a warning notifying you of this.
+     * hints - Turns hints on/off. In addition, tells webpack to throw either an error or a warning when hints are found.
+     */
+    performance: {
+      hints: false,
+    },
     entry: isServer ? './src/server/index.js' : './src/client/index.tsx',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: isServer ? 'index.js' : '[name].[hash].js',
+      chunkFilename: isServer ? 'index.js' : '[name].[hash].js',
       publicPath: '/assets/',
       pathinfo: false,
     },
@@ -114,6 +122,8 @@ const configure = (type) => (env, argv) => {
       '.tsx',
       '.js',
       '.jsx',
+      '.css',
+      '.styl',
     ]
   }
 
@@ -142,18 +152,32 @@ const configure = (type) => (env, argv) => {
           template: require('html-webpack-template'),
           inject: false,
           appMountId: 'root',
+          lang: 'ru',
+          title: 'TITLE',
+          meta: [
+            { name: 'viewport',
+              content: 'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no',
+            }
+          ],
+          // links: [
+          //   'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
+          //   'https://fonts.googleapis.com/icon?family=Material+Icons',
+          // ],
         }),
         new MiniCssExtractPlugin({
           filename: isDev ? `styles/[name].css` : `styles/[name].[hash].css`,
           chunkFilename: isDev ? `styles/[id].css` : `styles/[id].[hash].css`,
-        })
+        }),
+        // new webpack.DefinePlugin({
+        //   'process.env.DOMAIN': JSON.stringify(process.env.DOMAIN)
+        // })
       ]
       // if (!isDev) arr.push(new CompressionPlugin())
       return arr
     })()
 
     config.devServer = {
-      host: '0.0.0.0',
+      // host: '0.0.0.0',
       contentBase: path.join(__dirname, 'dist'),
       publicPath: '/',
       port: 8020,
