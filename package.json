@@ -82,7 +82,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-sorting": "^5.0.1",
     "pre-commit": "^1.2.2",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "rimraf": "^3.0.2",
     "stylelint": "^13.6.0",
     "stylelint-config-css-modules": "^2.2.0",
